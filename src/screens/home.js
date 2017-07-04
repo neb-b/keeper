@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text, TouchableHighlight } from 'react-native'
-import Screen from "./screen-wrapper"
+import Screen from './screen-wrapper'
 
 class Home extends React.Component {
   static navigationOptions = {
@@ -14,9 +14,9 @@ class Home extends React.Component {
     return (
       <Screen navigation={navigation}>
         <Text>Hello, Navigation!</Text>
-        <TouchableHighlight onPress={() => navigation.navigate("NewDream")}>
-          <Text style={{paddingTop: 20}}>
-            {"New Dream"}
+        <TouchableHighlight onPress={() => navigation.navigate('NewDream')}>
+          <Text style={{ paddingTop: 20 }}>
+            {'New Dream'}
           </Text>
         </TouchableHighlight>
       </Screen>

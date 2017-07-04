@@ -9,7 +9,16 @@
     "android": "react-native-scripts android",
     "ios": "react-native-scripts ios"
   },
+  "lint-staged": {
+    "*.js": [
+      "prettier --single-quote --no-semi --write",
+      "git add"
+    ]
+  },
   "devDependencies": {
+    "husky": "^0.14.2",
+    "lint-staged": "^4.0.0",
+    "prettier": "^1.5.2",
     "react-native-scripts": "^0.0.40"
   },
   "dependencies": {

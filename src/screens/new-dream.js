@@ -1,6 +1,6 @@
 import React from 'react'
 import { Text, View } from 'react-native'
-import Screen from "./screen-wrapper"
+import Screen from './screen-wrapper'
 
 class NewDream extends React.Component {
   static navigationOptions = {
@@ -12,7 +12,7 @@ class NewDream extends React.Component {
 
     return (
       <Screen navigation={navigation}>
-          <Text>New Dream</Text>
+        <Text>New Dream</Text>
       </Screen>
     )
   }
