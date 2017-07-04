@@ -12,7 +12,7 @@ class NewDream extends React.Component {
 
     return (
       <Screen navigation={navigation}>
-        <Text>New Dream</Text>
+        <Text>Add a new dream...</Text>
       </Screen>
     )
   }

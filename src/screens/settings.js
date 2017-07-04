@@ -12,7 +12,7 @@ class SettingsScreen extends React.Component {
 
     return (
       <Screen navigation={navigation}>
-        <Text>Settings</Text>
+        <Text>Settings page</Text>
       </Screen>
     )
   }
