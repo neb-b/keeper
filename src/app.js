@@ -9,15 +9,23 @@ const DashboardNavigator = StackNavigator({
   Home: { screen: HomeScreen }
 }, { headerMode: 'none' })
 
+const NewDreamNavigator = StackNavigator({
+  NewDream: { screen: NewDreamScreen }
+}, { headerMode: 'none' })
+
+const SettingsNavigator = StackNavigator({
+  Settings: {screen: SettingsScreen}
+}, { headerMode: 'none' })
+
 const DrawerNavigation = DrawerNavigator({
   Home: {
     screen: DashboardNavigator
   },
   NewDream: {
-    screen: NewDreamScreen
+    screen: NewDreamNavigator
   },
   Settings: {
-    screen: SettingsScreen
+    screen: SettingsNavigator
   }
 })
 
