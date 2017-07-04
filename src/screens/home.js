@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, TouchableHighlight } from 'react-native'
+import { View, Text, Button } from 'react-native'
 import Screen from './screen-wrapper'
 
 class Home extends React.Component {
@@ -14,14 +14,14 @@ class Home extends React.Component {
     return (
       <Screen navigation={navigation}>
         <Text>Dashboard</Text>
+
+        <Button
+          onPress={() => navigation.navigate('Settings')}
+          title="New Dream"
+        />
       </Screen>
     )
   }
 }
-// <TouchableHighlight onPress={() => navigation.navigate('NewDream')}>
-//   <Text style={{ paddingTop: 20 }}>
-//     {'New Dream'}
-//   </Text>
-// </TouchableHighlight>
 
 export default Home
