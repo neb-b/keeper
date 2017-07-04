@@ -9,12 +9,6 @@
     "android": "react-native-scripts android",
     "ios": "react-native-scripts ios"
   },
-  "lint-staged": {
-    "*.js": [
-      "prettier --single-quote --no-semi --write",
-      "git add"
-    ]
-  },
   "devDependencies": {
     "react-native-scripts": "0.0.40"
   },

@@ -1,0 +1,4 @@
+"*.js": [
+  "prettier --single-quote --no-semi --write",
+  "git add"
+]
