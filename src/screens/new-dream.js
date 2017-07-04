@@ -1,10 +1,10 @@
 import React from 'react'
-import { Text } from 'react-native'
+import { Text, View } from 'react-native'
 import Screen from "./screen-wrapper"
 
-class SettingsScreen extends React.Component {
+class NewDream extends React.Component {
   static navigationOptions = {
-    title: 'Settings'
+    title: 'New Dream'
   }
 
   render() {
@@ -12,10 +12,10 @@ class SettingsScreen extends React.Component {
 
     return (
       <Screen navigation={navigation}>
-        <Text>Settings</Text>
+          <Text>New Dream</Text>
       </Screen>
     )
   }
 }
 
-export default SettingsScreen
+export default NewDream

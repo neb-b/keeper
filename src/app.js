@@ -1,35 +1,24 @@
 import React from 'react'
 import { View, Text, TouchableHighlight } from 'react-native'
-import { StackNavigator, DrawerNavigator } from 'react-navigation'
+import { StackNavigator, DrawerNavigator, addNavigationHelpers } from 'react-navigation'
 import SettingsScreen from './screens/settings'
+import HomeScreen from './screens/home'
+import NewDreamScreen from "./screens/new-dream"
 
-class Home extends React.Component {
-  static navigationOptions = {
-    drawerLabel: 'Home',
-    title: 'Keeper'
-  }
-  render() {
-    const { navigate } = this.props.navigation
-    return (
-      <View>
-        <Text>Hello, Navigation!</Text>
-        <TouchableHighlight onPress={() => navigate('Settings')}>
-          <Text style={{ padding: 20 }}>Settings</Text>
-        </TouchableHighlight>
-      </View>
-    )
-  }
-}
+const DashboardNavigator = StackNavigator({
+  Home: { screen: HomeScreen }
+}, { headerMode: 'none' })
 
-const MainNavigator = StackNavigator({
-  Home: { screen: Home },
-  Settings: { screen: SettingsScreen }
+const DrawerNavigation = DrawerNavigator({
+  Home: {
+    screen: DashboardNavigator
+  },
+  NewDream: {
+    screen: NewDreamScreen
+  },
+  Settings: {
+    screen: SettingsScreen
+  }
 })
 
-const App = DrawerNavigator({
-  // DrawerNavigation is Home/Stats/Old Dreams
-  Home: { screen: MainNavigator },
-  Settings: { screen: SettingsScreen }
-})
-
-export default App
+export default DrawerNavigation
