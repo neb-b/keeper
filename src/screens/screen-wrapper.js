@@ -4,7 +4,6 @@ import Header from '../components/header'
 
 const Screen = props => {
   const { navigation, children } = props
-  console.log('\n\n Screen', navigation)
   // <Header navigation={navigation} />
   return (
     <View>

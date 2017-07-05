@@ -14,12 +14,24 @@ import createStore from './store'
 
 const DrawerComponent = ({ navigation }) => {
   console.log('navigation', navigation)
+  const { activeRoute } = navigation
+
+  console.log('ACTIVEROUTE', activeRoute)
 
   // Check if currently on Dashboard or Stats
 
   return (
     <View style={{ paddingTop: 40 }}>
-      <Button onPress={() => navigation.navigate('Dashboard')} title="Home" />
+      <Button
+        title="Home"
+        onPress={() => {
+          if (activeRoute === 'Dashboard') {
+            navigation.navigate('DrawerClose')
+          } else {
+            navigation.navigate('Dashboard')
+          }
+        }}
+      />
       <Button
         onPress={() => navigation.navigate('NewDream')}
         title="New Dream"
@@ -63,17 +75,18 @@ const DrawerNavigation = DrawerNavigator(
   { contentComponent: DrawerComponent }
 )
 
-const DrawerApp = ({ dispatch, nav }) =>
+const DrawerApp = ({ dispatch, nav, settings }) =>
   <DrawerNavigation
     navigation={addNavigationHelpers({
       dispatch: dispatch,
-      state: nav
+      state: nav,
+      activeRoute: settings.activeRoute
     })}
   />
 
 const mapStateToProps = s => {
   console.log('STATE', s)
-  return { nav: s.nav }
+  return { ...s }
 }
 
 const ConnectedApp = connect(mapStateToProps)(DrawerApp)

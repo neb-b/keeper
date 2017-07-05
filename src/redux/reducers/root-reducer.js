@@ -1,8 +1,9 @@
 import { combineReducers } from 'redux'
-// import navReducer from './nav-reducer'
+import settings from './settings'
 
 export default (buildReducers = navReducer => {
   return combineReducers({
-    nav: navReducer
+    nav: navReducer,
+    settings
   })
 })
