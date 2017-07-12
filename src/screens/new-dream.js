@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, View } from 'react-native'
+import { Text, View, Button } from 'react-native'
 import Screen from './screen-wrapper'
 
 class NewDream extends React.Component {
@@ -12,7 +12,8 @@ class NewDream extends React.Component {
 
     return (
       <Screen navigation={navigation}>
-        <Text>Add a new dream...</Text>
+        <Text style={{ paddingTop: 40 }}>Add a new dream...</Text>
+        <Button onPress={() => navigation.navigate('Home')} title="Cancel" />
       </Screen>
     )
   }

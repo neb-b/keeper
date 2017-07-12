@@ -12,12 +12,7 @@ class Home extends React.Component {
 
     return (
       <Screen navigation={navigation}>
-        <Text>Stats</Text>
-
-        <Button
-          onPress={() => navigation.navigate('NewDream')}
-          title="New Dream"
-        />
+        <Text style={{ paddingTop: 40 }}>Stats</Text>
       </Screen>
     )
   }

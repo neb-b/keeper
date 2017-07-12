@@ -12,7 +12,7 @@ class SettingsScreen extends React.Component {
 
     return (
       <Screen navigation={navigation}>
-        <Text>Settings page</Text>
+        <Text style={{ paddingTop: 40 }}>Settings page</Text>
       </Screen>
     )
   }
