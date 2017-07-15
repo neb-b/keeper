@@ -1,14 +1,15 @@
 import React from 'react'
-import { View } from 'react-native'
+import { View, ScrollView } from 'react-native'
 import Header from '../components/header'
 
 const Screen = props => {
-  const { navigation, children } = props
-  // <Header navigation={navigation} />
+  const { children, scroll } = props
+  const WrapperElement = scroll ? ScrollView : View
+
   return (
-    <View>
+    <WrapperElement>
       {children}
-    </View>
+    </WrapperElement>
   )
 }
 

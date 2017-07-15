@@ -3,9 +3,12 @@ import { Text, View, Button } from 'react-native'
 import Screen from './screen-wrapper'
 
 class NewDream extends React.Component {
-  static navigationOptions = {
-    title: 'New Dream'
-  }
+  static navigationOptions = ({ navigation }) => ({
+    title: 'New Dream',
+    headerLeft: (
+      <Button title="E" onPress={() => navigation.navigate('DrawerOpen')} />
+    )
+  })
 
   render() {
     const { navigation } = this.props

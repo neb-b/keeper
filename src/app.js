@@ -6,26 +6,37 @@ import {
   addNavigationHelpers,
   TabNavigator
 } from 'react-navigation'
-import { connect, Provider } from 'react-redux'
 import SettingsScreen from './screens/settings'
 import HomeScreen from './screens/home'
 import NewDreamScreen from './screens/new-dream'
 import StatsScreen from './screens/dream-stats'
-import createStore from './store'
 
-const StatsNavigator = StackNavigator({
-  Stats: { screen: StatsScreen }
+const StatsNavigator = StackNavigator(
+  {
+    Stats: { screen: StatsScreen }
+  },
+  { headerMode: 'none' }
+)
+
+const TimelineNavigator = StackNavigator(
+  {
+    Timeline: { screen: HomeScreen }
+  },
+  { headerMode: 'none' }
+)
+
+const SettingsNavigator = StackNavigator(
+  {
+    Settings: { screen: SettingsScreen }
+  },
+  { headerMode: 'none' }
+)
+
+const NewDreamNavigator = StackNavigator({
+  NewDream: { screen: NewDreamScreen }
 })
 
-const TimelineNavigator = StackNavigator({
-  Timeline: { screen: HomeScreen }
-})
-
-const SettingsNavigator = StackNavigator({
-  Settings: { screen: SettingsScreen }
-})
-
-const AppNavigator = TabNavigator({
+const TabNavigation = TabNavigator({
   Timeline: {
     screen: TimelineNavigator
   },
@@ -37,9 +48,17 @@ const AppNavigator = TabNavigator({
   }
 })
 
-const DrawerNavigation = DrawerNavigator({
-  Home: { screen: AppNavigator },
-  NewDream: { screen: NewDreamScreen }
+const StackNavigation = StackNavigator({
+  default: {
+    screen: TabNavigation
+  }
 })
 
-export default DrawerNavigation
+const KeeperNavigation = DrawerNavigator({
+  Home: { screen: StackNavigation },
+  NewDream: { screen: NewDreamNavigator }
+})
+
+const Keeper = () => <KeeperNavigation style={{ margin: 40 }} />
+
+export default KeeperNavigation

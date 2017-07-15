@@ -3,16 +3,28 @@ import { View, Text, Button } from 'react-native'
 import Screen from './screen-wrapper'
 
 class Home extends React.Component {
-  static navigationOptions = {
-    drawerLabel: 'Stats',
-    title: 'Stats'
-  }
+  static navigationOptions = ({ navigation }) => ({
+    drawerLabel: 'Home',
+    title: 'Stats',
+    headerRight: (
+      <Button
+        title="New Dream"
+        onPress={() => navigation.navigate('NewDream')}
+      />
+    ),
+    headerLeft: (
+      <Button title="E" onPress={() => navigation.navigate('DrawerOpen')} />
+    )
+  })
+
   render() {
     const { navigation } = this.props
 
     return (
-      <Screen navigation={navigation}>
-        <Text style={{ paddingTop: 40 }}>Stats</Text>
+      <Screen scroll>
+        <View style={{ padding: 50, marginTop: 75, marginBottom: 75 }}>
+          <Text style={{ textAlign: 'center' }}>Some Graph</Text>
+        </View>
       </Screen>
     )
   }
