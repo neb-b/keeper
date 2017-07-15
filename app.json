@@ -1,4 +1,6 @@
 {
+  "name": "Keeper",
+  "displayName": "Keeper",
   "expo": {
     "sdkVersion": "18.0.0"
   }

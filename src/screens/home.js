@@ -23,7 +23,7 @@ class Home extends React.Component {
     return (
       <Screen navigation={navigation} scroll>
         <View style={{ padding: 50, marginTop: 75, marginBottom: 75 }}>
-          <Text style={{ textAlign: 'center' }}>Calendar</Text>
+          <Text style={{ textAlign: 'center' }}>?????</Text>
         </View>
         <Button
           onPress={() => navigation.navigate('NewDream')}
