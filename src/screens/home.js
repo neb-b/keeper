@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react'
 import { View, Text, Button, ScrollView } from 'react-native'
 import Screen from './screen-wrapper'
@@ -17,6 +19,10 @@ class Home extends React.Component {
       return <TabIcon focused={focused} page="settings" />
     },
   })
+
+  props: {
+    navigation: Object,
+  }
 
   render() {
     const { navigation } = this.props

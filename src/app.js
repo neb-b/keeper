@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react'
 import { Button, View, Text, TouchableHighlight } from 'react-native'
 import {

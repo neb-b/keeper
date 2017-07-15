@@ -15,6 +15,10 @@ class Home extends React.Component {
     tabBarIcon: ({ focused }) => <TabIcon focused={focused} page="stats" />,
   })
 
+  props: {
+    navigation: Object,
+  }
+
   render() {
     const { navigation } = this.props
 

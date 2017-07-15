@@ -1,10 +1,8 @@
+// @flow
+
 import React from 'react'
 import { Text, View, Button } from 'react-native'
 import Screen from './screen-wrapper'
-
-/*
- Will need to disable the drawer on this screen
-*/
 
 class NewDream extends React.Component {
   static navigationOptions = ({ navigation }) => ({
@@ -12,9 +10,12 @@ class NewDream extends React.Component {
     headerLeft: <Button title="<" onPress={() => navigation.goBack(null)} />,
   })
 
+  props: {
+    navigation: Object,
+  }
+
   render() {
     const { navigation } = this.props
-    console.log('navigation', navigation)
 
     return (
       <Screen navigation={navigation}>

@@ -4,6 +4,8 @@
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
     "precommit": "lint-staged",
+    "flow": "flow",
+    "flow:watch": "flow-watch",
     "start": "react-native-scripts start",
     "eject": "react-native-scripts eject",
     "android": "react-native-scripts android",
@@ -16,9 +18,13 @@
     ]
   },
   "rnpm": {
-   "assets": ["node_modules/react-native-vector-icons/fonts"]
+    "assets": [
+      "node_modules/react-native-vector-icons/fonts"
+    ]
   },
   "devDependencies": {
+    "flow-bin": "^0.45.0",
+    "flow-watch": "^1.1.1",
     "husky": "^0.14.2",
     "lint-staged": "^4.0.0",
     "prettier": "^1.5.2",

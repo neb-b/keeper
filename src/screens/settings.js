@@ -10,6 +10,10 @@ class SettingsScreen extends React.Component {
     tabBarIcon: ({ focused }) => <TabIcon focused={focused} page="settings" />,
   })
 
+  props: {
+    navigation: Object,
+  }
+
   render() {
     const { navigation } = this.props
 

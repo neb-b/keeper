@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 
@@ -10,7 +12,7 @@ const pageMap = {
 const focusedColor = '#eeed5f'
 const defaultColor = '#f4f4f4'
 
-const TabIcon = ({ focused, page }) => {
+const TabIcon = ({ focused, page }: { focused: boolean, page: string }) => {
   return (
     <Icon
       name={pageMap[page]}
