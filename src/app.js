@@ -59,6 +59,4 @@ const KeeperNavigation = DrawerNavigator({
   NewDream: { screen: NewDreamNavigator }
 })
 
-const Keeper = () => <KeeperNavigation style={{ margin: 40 }} />
-
 export default KeeperNavigation

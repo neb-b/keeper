@@ -2,12 +2,14 @@ import React from 'react'
 import { Text, View, Button } from 'react-native'
 import Screen from './screen-wrapper'
 
+/*
+ Will need to disable the drawer on this screen
+*/
+
 class NewDream extends React.Component {
   static navigationOptions = ({ navigation }) => ({
     title: 'New Dream',
-    headerLeft: (
-      <Button title="E" onPress={() => navigation.navigate('DrawerOpen')} />
-    )
+    headerLeft: <Button title="<" onPress={() => navigation.navigate('Home')} />
   })
 
   render() {
