@@ -1,20 +1,18 @@
 import React from 'react'
 import { View, Text, Button } from 'react-native'
 import Screen from './screen-wrapper'
+import TabIcon from './internal/tab-icon'
 
 class Home extends React.Component {
   static navigationOptions = ({ navigation }) => ({
     drawerLabel: 'Home',
     title: 'Stats',
-    headerRight: (
+    headerRight: () =>
       <Button
         title="New Dream"
         onPress={() => navigation.navigate('NewDream')}
-      />
-    ),
-    headerLeft: (
-      <Button title="E" onPress={() => navigation.navigate('DrawerOpen')} />
-    )
+      />,
+    tabBarIcon: ({ focused }) => <TabIcon focused={focused} page="stats" />
   })
 
   render() {

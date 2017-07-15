@@ -11,52 +11,50 @@ import HomeScreen from './screens/home'
 import NewDreamScreen from './screens/new-dream'
 import StatsScreen from './screens/dream-stats'
 
-const StatsNavigator = StackNavigator(
-  {
-    Stats: { screen: StatsScreen }
-  },
-  { headerMode: 'none' }
-)
+const StatsNavigator = StackNavigator({
+  Stats: { screen: StatsScreen }
+})
 
-const TimelineNavigator = StackNavigator(
-  {
-    Timeline: { screen: HomeScreen }
-  },
-  { headerMode: 'none' }
-)
+const TimelineNavigator = StackNavigator({
+  Timeline: { screen: HomeScreen }
+})
 
-const SettingsNavigator = StackNavigator(
-  {
-    Settings: { screen: SettingsScreen }
-  },
-  { headerMode: 'none' }
-)
+const SettingsNavigator = StackNavigator({
+  Settings: { screen: SettingsScreen }
+})
 
-const NewDreamNavigator = StackNavigator({
+const NewDreamNavigation = StackNavigator({
   NewDream: { screen: NewDreamScreen }
 })
 
-const TabNavigation = TabNavigator({
-  Timeline: {
-    screen: TimelineNavigator
+const AppNavigator = TabNavigator(
+  {
+    Home: { screen: TimelineNavigator },
+    Stats: { screen: StatsNavigator },
+    Settings: { screen: SettingsNavigator }
   },
-  Stats: {
-    screen: StatsNavigator
+  {
+    swipeEnabled: true,
+    animationEnabled: true,
+    tabBarOptions: {
+      inactiveTintColor: '#f4f4f4',
+      activeTintColor: '#eeed5f',
+      labelStyle: {
+        fontSize: 12
+      },
+      style: {
+        backgroundColor: '#7a3bc1'
+      }
+    }
+  }
+)
+
+const KeeperNavigation = StackNavigator(
+  {
+    Home: { screen: AppNavigator },
+    NewDream: { screen: NewDreamNavigation }
   },
-  Settings: {
-    screen: SettingsNavigator
-  }
-})
-
-const StackNavigation = StackNavigator({
-  default: {
-    screen: TabNavigation
-  }
-})
-
-const KeeperNavigation = DrawerNavigator({
-  Home: { screen: StackNavigation },
-  NewDream: { screen: NewDreamNavigator }
-})
+  { headerMode: 'none' }
+)
 
 export default KeeperNavigation

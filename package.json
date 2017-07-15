@@ -15,6 +15,9 @@
       "git add"
     ]
   },
+  "rnpm": {
+   "assets": ["node_modules/react-native-vector-icons/fonts"]
+  },
   "devDependencies": {
     "husky": "^0.14.2",
     "lint-staged": "^4.0.0",
@@ -22,7 +25,7 @@
     "react-native-scripts": "^0.0.40"
   },
   "dependencies": {
-    "expo": "^18.0.3",
+    "expo": "^18.0.6",
     "react": "16.0.0-alpha.12",
     "react-native": "^0.45.1",
     "react-native-vector-icons": "^4.2.0",

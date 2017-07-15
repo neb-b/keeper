@@ -1,6 +1,7 @@
 import React from 'react'
 import { View, Text, Button, ScrollView } from 'react-native'
 import Screen from './screen-wrapper'
+import TabIcon from './internal/tab-icon'
 
 class Home extends React.Component {
   static navigationOptions = ({ navigation }) => ({
@@ -12,9 +13,9 @@ class Home extends React.Component {
         onPress={() => navigation.navigate('NewDream')}
       />
     ),
-    headerLeft: (
-      <Button title="E" onPress={() => navigation.navigate('DrawerOpen')} />
-    )
+    tabBarIcon: ({ focused }) => {
+      return <TabIcon focused={focused} page="settings" />
+    }
   })
 
   render() {
