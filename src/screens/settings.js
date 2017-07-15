@@ -7,7 +7,7 @@ class SettingsScreen extends React.Component {
   static navigationOptions = ({ navigation }) => ({
     title: 'Settings',
     drawerLabel: 'Settings',
-    tabBarIcon: ({ focused }) => <TabIcon focused={focused} page="settings" />
+    tabBarIcon: ({ focused }) => <TabIcon focused={focused} page="settings" />,
   })
 
   render() {

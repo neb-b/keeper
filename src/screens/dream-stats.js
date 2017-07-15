@@ -12,7 +12,7 @@ class Home extends React.Component {
         title="New Dream"
         onPress={() => navigation.navigate('NewDream')}
       />,
-    tabBarIcon: ({ focused }) => <TabIcon focused={focused} page="stats" />
+    tabBarIcon: ({ focused }) => <TabIcon focused={focused} page="stats" />,
   })
 
   render() {

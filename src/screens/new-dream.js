@@ -9,7 +9,7 @@ import Screen from './screen-wrapper'
 class NewDream extends React.Component {
   static navigationOptions = ({ navigation }) => ({
     title: 'New Dream',
-    headerLeft: <Button title="<" onPress={() => navigation.goBack(null)} />
+    headerLeft: <Button title="<" onPress={() => navigation.goBack(null)} />,
   })
 
   render() {

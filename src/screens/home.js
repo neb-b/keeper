@@ -15,7 +15,7 @@ class Home extends React.Component {
     ),
     tabBarIcon: ({ focused }) => {
       return <TabIcon focused={focused} page="settings" />
-    }
+    },
   })
 
   render() {

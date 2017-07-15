@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons'
 const pageMap = {
   settings: 'settings-system-daydream',
   stats: 'bubble-chart',
-  settings: 'settings'
+  settings: 'settings',
 }
 
 const focusedColor = '#eeed5f'
