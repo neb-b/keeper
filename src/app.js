@@ -1,10 +1,8 @@
 // @flow
 
 import React from 'react'
-import { Button, View, Text, TouchableHighlight } from 'react-native'
 import {
   StackNavigator,
-  DrawerNavigator,
   addNavigationHelpers,
   TabNavigator,
 } from 'react-navigation'
@@ -13,6 +11,7 @@ import HomeScreen from './screens/home'
 import NewDreamScreen from './screens/new-dream'
 import StatsScreen from './screens/dream-stats'
 
+// Stack navigators
 const StatsNavigator = StackNavigator({
   Stats: { screen: StatsScreen },
 })
@@ -29,6 +28,7 @@ const NewDreamNavigation = StackNavigator({
   NewDream: { screen: NewDreamScreen },
 })
 
+// Tab navigation
 const AppNavigator = TabNavigator(
   {
     Home: { screen: TimelineNavigator },
@@ -36,6 +36,7 @@ const AppNavigator = TabNavigator(
     Settings: { screen: SettingsNavigator },
   },
   {
+    // Home tabNav styles/settings
     swipeEnabled: true,
     animationEnabled: true,
     tabBarPosition: 'bottom',
