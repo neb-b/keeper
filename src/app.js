@@ -6,6 +6,9 @@ import {
   addNavigationHelpers,
   TabNavigator,
 } from 'react-navigation'
+import { combineReducers, createStore, applyMiddleware } from 'redux'
+import logger from 'redux-logger'
+import { connect, Provider } from 'react-redux'
 import SettingsScreen from './screens/settings'
 import HomeScreen from './screens/home'
 import NewDreamScreen from './screens/new-dream'
@@ -60,5 +63,16 @@ const KeeperNavigation = StackNavigator(
   },
   { headerMode: 'none' }
 )
+
+console.log('KeeperNavigation', KeeperNavigation.router)
+
+const reducer = combineReducers({
+  navReducer: (state = {}, action) =>
+    KeeperNavigation.router.getStateForAction(
+      router.getActionForPathAndParams(path)
+    ),
+})
+
+const store = createStore(reducer)
 
 export default KeeperNavigation
